@@ -13,28 +13,22 @@ server.use(cors());
 
 // Albums & Player
 server.get('/artists/albums/:artistID', (req, res) => {
-  console.log("Wissem")
-  axios
-   .get ('http://localhost:3001/artists/albums/' + req.params.artistID)
-   .then (function (response) {
-     res.send(response.data);
-   })
-   .catch (function (error) {
-     console.log ('error', error);
-   });
+  res.redirect('http://localhost:3001' + req.url);
+});
+
+// Related Artists
+server.get('/relatedArtists/id/artist', (req, res) => {
+  res.redirect('http://localhost:3002' + req.url);
+});
+
+// Popular Songs
+server.get('/artist/:id', (req, res) => {
+  res.redirect('http://localhost:3003/' + req.url);
 });
 
 // Header
 server.get('/artists/:artistID', (req, res) => {
-  console.log("David")
-  axios
-   .get ('http://localhost:3004/artists/' + req.params.artistID)
-   .then (function (response) {
-     res.send(response.data);
-   })
-   .catch (function (error) {
-     console.log ('error', error);
-   });
+   res.redirect('http://localhost:3004' + req.url);
 });
 
 server.listen(3000, console.log('Listening on:', 3000));
