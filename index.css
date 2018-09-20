@@ -11,6 +11,7 @@ body {
   width: 100%;
   margin: 0px;
   padding: 0px;
+  font-size: 16px;
   overflow: auto;
   cursor: default;
   background: rgb(25, 25, 25);
@@ -36,6 +37,11 @@ body {
 #popularApp {
   margin-left: 250px;
   margin-right: 100px;
-  margin-top: 100px;
+  margin-top: 90px;
+  width: 50%;
+}
+
+input[type=range] {
+  width: 90%;
 }
 
