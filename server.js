@@ -1,14 +1,14 @@
 const express = require ('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const axios = require('axios');
 const cors = require('cors');
+var compression = require('compression');
 
 var server = express();
-
+server.use(compression())
 server.use(bodyParser.json());
 server.use(express.urlencoded({extended: true}));
-server.use(express.static(path.join(__dirname, './')));
+server.use(express.static(path.join(__dirname, './'), { maxAge: '30 days' }));
 server.use(cors());
 
 // Albums & Player
