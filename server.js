@@ -24,7 +24,7 @@ server.get('/artist/:id/relatedArtists', (req, res) => {
 
 // Popular Songs
 server.get('/api/v1/artists/:id/popular-songs', (req, res) => {
-  res.redirect('http://localhost:3003' + req.url);
+  res.redirect('http://13.56.189.115' + req.url);
 });
 
 // Header
